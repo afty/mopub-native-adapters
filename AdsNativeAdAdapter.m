@@ -43,14 +43,15 @@
         {
             [properties setObject:[adNative.nativeAssets objectForKey:kNativeTextKey] forKey:kAdTextKey];
         }
-        if ([adNative.nativeAssets objectForKey:kNativeIconImageKey])
-        {
-            [properties setObject:[adNative.nativeAssets objectForKey:kNativeIconImageKey] forKey:kAdIconImageKey];
-        }
         if ([adNative.nativeAssets objectForKey:kNativeMainImageKey])
         {
             [properties setObject:[adNative.nativeAssets objectForKey:kNativeMainImageKey] forKey:kAdMainImageKey];
         }
+        if ([adNative.nativeAssets objectForKey:kNativeStarRatingKey])
+        {
+            [properties setObject:[adNative.nativeAssets objectForKey:kNativeStarRatingKey] forKey:kAdStarRatingKey];
+        }
+        
         if ([adNative.nativeAssets objectForKey:kNativeCTATextKey] && [[adNative.nativeAssets objectForKey:kNativeCTATextKey] length] > 0)
         {
             [properties setObject:[adNative.nativeAssets objectForKey:kNativeCTATextKey] forKey:kAdCTATextKey];
@@ -58,6 +59,15 @@
         else
         {
             [properties setObject:@"Learn More" forKey:kAdCTATextKey];
+        }
+        
+        if ([adNative.nativeAssets objectForKey:kNativeIconImageKey])
+        {
+            [properties setObject:[adNative.nativeAssets objectForKey:kNativeIconImageKey] forKey:kAdIconImageKey];
+        }
+        else if ([adNative.nativeAssets objectForKey:kNativeMainImageKey])
+        {
+            [properties setObject:[adNative.nativeAssets objectForKey:kNativeMainImageKey] forKey:kAdIconImageKey];
         }
 
         _properties = properties;
